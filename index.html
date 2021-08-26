@@ -15,13 +15,13 @@
   <input type="text" id="searchBox">
   <button id="searchButton" onclick="search()">Search</button>
   <label for="sortMenu">Sort by:</label>
-  <select name="sortMenu" id="sortMenu">
+  <select onchange="search()" name="sortMenu" id="sortMenu">
     <option value="relevance">Relevance</option>
     <option value="date">Most Recent</option>
     <option value="pub date">Publication Date</option>
   </select>
   <label for="perPageMenu">Results Per Page:</label>
-  <select name="perPageMenu" id="perPageMenu">
+  <select onchange="search()" name="perPageMenu" id="perPageMenu">
     <option value="10">10</option>
     <option value="20">20</option>
     <option value="50">50</option>
