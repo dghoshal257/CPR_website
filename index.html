@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <!-- <link rel="stylesheet" href="styles1.css">
+  <link rel="stylesheet" href="styles2.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+</head>
 
+<body>
+  <h1>Pubmed CPR Search</h1>
+  <p>Search Term:</p>
+  <input type="text" id="searchBox">
+  <button id="searchButton" onclick="search()">Search</button>
+  <label for="sortMenu">Sort by:</label>
+  <select name="sortMenu" id="sortMenu">
+    <option value="relevance">Relevance</option>
+    <option value="date">Most Recent</option>
+    <option value="pub date">Publication Date</option>
+  </select>
+  <label for="perPageMenu">Results Per Page:</label>
+  <select name="perPageMenu" id="perPageMenu">
+    <option value="10">10</option>
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+  </select>
+  <div id="results"></div>
+  <script type="text/javascript">
+    var temp = document.getElementById("searchBox");
+    var temp2 = document.getElementById("searchButton");
+    temp.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13 && temp.value != "") {
+        event.preventDefault();
+        temp2.click();
+      }
+    });
+  </script>
+</body>
+</html>
